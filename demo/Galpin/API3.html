@@ -1,0 +1,204 @@
+<!--<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>-->
+		<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,"/>
+		<meta name="msapplication-tap-highlight" content="no"/>-->
+	
+		<title>Orbee 360 Viewer</title>
+		<!-- CSS for the player exterior as well as interior -easy360 --> 
+		<link rel="stylesheet" type="text/css"  href="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_round_silver/global.css"/>
+		<!-- JAVASCRIPT for the exterior as well as interior -easy360 --> 
+		<!--<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/FWDViewer.js"></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+		<!-- JAVASCRIPT for grabbing the key from url, parsing JSON, storing all images into respective arrays, tabs functionality with show and hide functions for respective tabs, buttons functionality for interior as well as exterior with loading the player on first click also with show and hide functionalities for respective buttons etc. -->  
+		<!--<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/Setup2.js"></script>-->
+		<!-- CSS styling for the widget,all tabs and divs of pgwSlideshow -->
+		<link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_round_silver/newStyle4.css"/>
+		<!--  JAVASCRIPT for Images Carousel -pgwSlideshow-->
+		<!--<script src='https://cdn.rawgit.com/Pagawa/PgwSlideshow/master/pgwslideshow.min.js'></script>-->
+		<!-- CSS for the carousel -pgwSlideshow-->
+		<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_round_silver/pgwslideshow.css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic,300italic,700italic' rel='stylesheet' type='text/css'>
+	<!--</head>-->
+
+	<!--<body style="background-color:#CCCCCC; height:800px;">-->
+
+
+		<!-- div used to wrap into widget-->
+		<div id = "Sparkiwrapper">
+
+			<!-- div for tabs-->
+			<div id = "tabs" >
+				<!-- listing tabs, active class specifies which tab is active and accordingly selects the div in desc div by attaching class active to the respective div -->
+				<ul>
+					<li id="tab1" class="active">360</li>
+					<li id="tab2">IMAGES</li>
+				</ul>
+			</div>
+
+			<!-- div conatiner to hold the whole tab having the same color of tab to the body of container -->
+			<div class="container" >
+			<!-- div used as a holder for the exterior 360viewer -easy360-->
+				<div id="myDiv" ></div>
+			<!-- div used as a holder for the interior 360viewer -easy360-->
+				<div id="myDiv1"></div>
+
+			<!-- div to hold the divs for tabs on switching tabs for the functionality of making the tab functionality to be active -->
+				<div id = "desc">
+				
+				
+				<!-- start exterior 360viewer, display:none is added in case that js is disabled! by default class=active to display when the url loaded for the first time for the 360 tab -easy360-->
+					<div id="viewerPlaylistAndSkin" class= "active" >
+	
+					<!-- exterior skin SKIN_MINIMAL_DARK at the bottom which is displayed on hover -easy360 -->
+						<ul data-skin="">
+							<li data-preloader-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/preloader.png"></li>
+							<li data-hand-move-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handmove.cur"></li>
+							<li data-hand-grab-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handgrab.cur"></li>
+							<li data-hand-rotate-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handrotate.cur"></li>
+							<li data-main-lightbox-close-button-normal-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon.png"></li>
+							<li data-main-lightbox-close-button-selected-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon-rollover.png"></li>
+							<li data-controller-background-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-left.png"></li>
+							<li data-controller-background-center-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-middle.png"></li>
+							<li data-controller-background-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-right.png"></li>
+							<li data-controller-pan-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/move-icon.png"></li>
+							<li data-controller-pan-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/move-icon-rollover.png"></li>
+							<li data-controller-rotate-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/rotate-icon.png"></li>
+							<li data-controller-rotate-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/rotate-icon-rollover.png"></li>
+							<li data-controller-next-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/right-icon.png"></li>
+							<li data-controller-next-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/right-icon-rollover.png"></li>
+							<li data-controller-prev-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/left-icon.png"></li>
+							<li data-controller-prev-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/left-icon-rollover.png"></li>	
+							<li data-controller-play-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/play-icon.png"></li>
+							<li data-controller-play-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/play-icon-rollover.png"></li>
+							<li data-controller-pause-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/pause-icon.png"></li>
+							<li data-controller-pause-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/pause-icon-rollover.png"></li>
+							<li data-controller-info-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/info-icon.png"></li>
+							<li data-controller-info-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/info-icon-rollover.png"></li>
+							<li data-controller-link-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/link-icon.png"></li>
+							<li data-controller-link-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/link-icon-rollover.png"></li>
+							<li data-controller-fullscreen-full-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-full-icon.png"></li>
+							<li data-controller-fullscreen-full-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-full-icon-rollover.png"></li>
+							<li data-controller-fullscreen-normal-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-normal-icon.png"></li>
+							<li data-controller-fullscreen-normal-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-normal-icon-rollover.png"></li>
+							<li data-controller-zoomin-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomin.png"></li>
+							<li data-controller-zoomin-button-slected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomin-rollover.png"></li>
+							<li data-controller-zoomout-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomout.png"></li>
+							<li data-controller-zoomout-button-slected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomout-rollover.png"></li>
+							<li data-controller-scrollba-background-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-left.png"></li>
+							<li data-controller-scrollbar-background-middle-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-middle.png"></li>
+							<li data-controller-scrollbar-background-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-right.png"></li>
+							<li data-controller-scrollbar-handler-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handler.png"></li>
+							<li data-controller-scrollbar-handler-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handler-rollover.png"></li>
+							<li data-button-tooltip-bottom-pointer-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-down-pointer.png"></li>
+							<li data-button-tooltip-top-pointer-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-top-pointer.png"></li>
+							<li data-button-tooltip-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-left.png"></li>
+							<li data-button-tooltip-middle-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-middle.png"></li>
+							<li data-button-tooltip-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-right.png"></li>
+							<li data-info-window-close-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon.png"></li>
+							<li data-info-window-close-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon-rollover.png"></li>
+						</ul>
+
+					<!-- exterior 360palylist (adding images) images added dynamically by the exterior() function in Setup1.js -->
+						<ul id = "new" data-paylist=""> </ul> 
+					<!-- End of div for exterior 360 Player-->
+					</div>
+
+				<!-- div for image widget class becomes active when the images tab is clicked -->
+					<div id = "imageContainer" style="background-color: #000000; ">
+						<!-- LOGO of Sparkilabs on images tab -->
+						
+						<div class ="slides" style="position:absolute; ">
+							
+							<ul class="pgwSlideshow"  ></ul>
+						</div>
+									
+					</div>
+				
+				<!-- start interior 360viewer, display:none is added in case that js is disabled! copied same as in exterior 360 viewer -pgwSlideshow -->
+					<div id="viewerPlaylistAndSkin1" class= "active" >
+	
+					<!-- interior skin which is displayed only on hover at the bottom-->
+						<ul data-skin="">
+							<li data-preloader-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/preloader.png"></li>
+							<li data-hand-move-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handmove.cur"></li>
+							<li data-hand-grab-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handgrab.cur"></li>
+							<li data-hand-rotate-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handrotate.cur"></li>
+							<li data-main-lightbox-close-button-normal-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon.png"></li>
+							<li data-main-lightbox-close-button-selected-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon-rollover.png"></li>
+							<li data-controller-background-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-left.png"></li>
+							<li data-controller-background-center-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-middle.png"></li>
+							<li data-controller-background-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/bg-bar-right.png"></li>
+							<li data-controller-pan-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/move-icon.png"></li>
+							<li data-controller-pan-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/move-icon-rollover.png"></li>
+							<li data-controller-rotate-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/rotate-icon.png"></li>
+							<li data-controller-rotate-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/rotate-icon-rollover.png"></li>
+							<li data-controller-next-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/right-icon.png"></li>
+							<li data-controller-next-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/right-icon-rollover.png"></li>
+							<li data-controller-prev-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/left-icon.png"></li>
+							<li data-controller-prev-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/left-icon-rollover.png"></li>	
+							<li data-controller-play-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/play-icon.png"></li>
+							<li data-controller-play-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/play-icon-rollover.png"></li>
+							<li data-controller-pause-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/pause-icon.png"></li>
+							<li data-controller-pause-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/pause-icon-rollover.png"></li>
+							<li data-controller-info-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/info-icon.png"></li>
+							<li data-controller-info-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/info-icon-rollover.png"></li>
+							<li data-controller-link-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/link-icon.png"></li>
+							<li data-controller-link-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/link-icon-rollover.png"></li>
+							<li data-controller-fullscreen-full-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-full-icon.png"></li>
+							<li data-controller-fullscreen-full-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-full-icon-rollover.png"></li>
+							<li data-controller-fullscreen-normal-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-normal-icon.png"></li>
+							<li data-controller-fullscreen-normal-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/fullscr-normal-icon-rollover.png"></li>
+							<li data-controller-zoomin-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomin.png"></li>
+							<li data-controller-zoomin-button-slected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomin-rollover.png"></li>
+							<li data-controller-zoomout-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomout.png"></li>
+							<li data-controller-zoomout-button-slected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/zoomout-rollover.png"></li>
+							<li data-controller-scrollba-background-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-left.png"></li>
+							<li data-controller-scrollbar-background-middle-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-middle.png"></li>
+							<li data-controller-scrollbar-background-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/scrool-right.png"></li>
+							<li data-controller-scrollbar-handler-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handler.png"></li>
+							<li data-controller-scrollbar-handler-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/handler-rollover.png"></li>
+							<li data-button-tooltip-bottom-pointer-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-down-pointer.png"></li>
+							<li data-button-tooltip-top-pointer-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-top-pointer.png"></li>
+							<li data-button-tooltip-left-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-left.png"></li>
+							<li data-button-tooltip-middle-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-middle.png"></li>
+							<li data-button-tooltip-right-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/button-tool-tip-right.png"></li>
+							<li data-info-window-close-button-normal-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon.png"></li>
+							<li data-info-window-close-button-selected-state-path="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/skin_minimal_dark/skin/close-icon-rollover.png"></li>
+						</ul>
+					<!-- interior 360palylist (adding images) -->
+						<ul id = "new1" data-paylist=""> </ul> 
+
+					</div>
+
+				</div>
+				
+				
+
+			</div>
+
+	
+			
+				<!--LOGO -SPARKILABS-->
+					<img class="logo" src="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/logo.png" />
+				<!-- image for exterior button created by DAVID -->
+					<img class="banner" src="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/carExterior.png" onclick="exterior();" /><br>
+				<!-- Button for interior created by DAVID -->
+					<img class="banner1" src="https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/carInterior.png" onclick="interior();" />
+	
+
+		</div>
+				
+
+
+	<!--</body>-->
+
+<!--</html>-->
+
+
+
+

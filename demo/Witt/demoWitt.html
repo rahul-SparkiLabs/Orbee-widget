@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+
+		<base href="http://www.wittlincoln.com/" /><meta name="viewport" content="width=device-width, height=dvice-height, initial-scale=1" />
+
+		<!--<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"5ec7c86529","applicationID":"522884","transactionName":"ZFQBbBZQVkpZAkUMWF0eKlYSVFZNVxNISmFWWQpbCFQ=","queueTime":15,"applicationTime":633,"ttGuid":"E6C8F5EE53A60864","agent":"js-agent.newrelic.com/nr-686.min.js"}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQYHWVRADQECXFlW"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,ee:"QJf3ax"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=t("ee").create(),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-686.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>-->
+
+	<title>New 2015 Lincoln MKC Premiere 100A</title>
+	<meta name="title" content="New 2015 Lincoln MKC Premiere 100A"/>
+	<meta name="keywords" content="New 2015 Lincoln MKC Premiere 100A (Silver SUV) San Diego"/>
+	<meta name="description" content="Check out this New 2015 Lincoln MKC Premiere 100A (Silver SUV) from Witt Lincoln serving San Diego. This vehicle is currently available in-stock to buy now."/>
+        
+
+		
+		
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+				<meta name="HandheldFriendly" content="true" />
+		<link rel="apple-touch-icon" href="http://assets.clickmotive.com/Customers/3/33421/33421_iPhoneIcon.png"/>
+<link rel="apple-touch-startup-image" href="http://assets.clickmotive.com/Customers/3/33421/33421_iPhoneSplash.png"/>
+ 
+		
+		<meta name="google-site-verification" content="kZfBe89wSHbmqqqdCqJgPWxf6l25HzzAHwVy1K4sX-0" />
+
+		
+		<link rel="canonical" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Premiere-100A-Silver-SUV/41277020/"/>
+
+
+		
+
+
+<link href="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledMVCCSS/Designs/LincolnUnity/Palettes/SmokeGrayLight/Layouts/Default/app-inventory.css" rel="stylesheet" type="text/css" media="all" />
+
+
+<!--[if lt IE 9]>
+	<link href="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledMVCCSS/Designs/LincolnUnity/Palettes/SmokeGrayLight/Layouts/Default/app-inventory-ie_fixes.css" rel="stylesheet" type="text/css" media="all" />
+
+<![endif]-->
+
+		<style type="text/css">
+			.request-price-link {
+				color: #FFFFFF !important;
+				background-color: #11A82A !important;
+				background-image: none !important;
+				filter: none;
+			}
+
+			.request-price-link:hover {
+				color: #FFFFFF !important;
+				background-color: #11A82A !important;
+				background-image: none !important;
+				filter: none;
+			}
+		</style>
+
+
+        <script type="text/javascript" src="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/vendor/modernizr/custom.modernizr.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	    <script type="text/javascript">window.jQuery || document.write('<script src="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/vendor/jquery/jquery-1.10.1.min.js"><\/script>')</script>
+	    <!--[if lt IE 10]>
+        <script type="text/javascript"  src="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/vendor/polyfiller/polyfiller.js"></script>
+	    <script type="text/javascript">
+			webshims.setOptions("debug", false);
+        	webshims.setOptions("basePath", 'http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/vendor/polyfiller/shims/');
+        	webshims.setOptions('forms', {
+				addValidators: true
+            });
+        	webshims.setOptions('forms-ext', {
+				replaceUI: !(/mobile|ipad|iphone|fennec|android/i.test(navigator.userAgent))
+            });
+        	webshims.polyfill('es5 forms forms-ext mediaelement');
+        </script>
+        <![endif]-->
+        <script type="text/javascript"  src="/DesignFamily/_Components/FDAdvertising/FDAdvertising.js"></script>
+
+		
+       
+
+		<link rel="shortcut icon" href="http://assets.clickmotive.com/Favicons/lincoln.ico" />
+
+
+		
+		<script type="text/javascript">var Site = Site || {}; Site.Stage = "";</script>
+		                                     <style>
+.content-wrapper {
+    background: url("http://assets.clickmotive.com/Customers/3/33421/file/wittlincoln_skin2.jpg?q=100") top center no-repeat;
+background-attachment:fixed;
+}
+</style>
+<script>
+$(window).load(function () {
+$('#homepageremovescript').remove();
+});
+</script>                                <style>
+
+    @media screen and (min-width: 1024px) {
+        .site-header {
+            background-clip: border-box;
+            background-color: rgba (0, 0, 0, 0);
+            background-image: url("http://assets.clickmotive.com/Customers/3/33421/file/wittlincoln_header_responsive1.jpg?q=100");
+            background-origin: padding-box;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+.site-header .site-heading {
+   visibility: hidden;
+}
+.site-header .dealer-make-logo {
+    visibility: hidden;
+}
+    }
+</style>
+
+		<script src="//s.btstatic.com/tag.js#site=0b20dJp&mode=sync" type="text/javascript"></script>
+
+	</head>
+<body>
+	
+
+<!-- End Google Tag Manager -->
+
+	<a id="top"></a>
+	<div class="wrapper">
+		<div class="offscreen-container offscreen-container-left">
+			<nav class="site-nav offscreen left" id="site_nav">
+				<ul class="offscreen-panel">
+					<!-- Render Site Navigation -->
+        <li class="">
+            <a href="/Default.aspx" target="_self">Home</a>
+        </li>
+        <li class="">
+            <a href="/San-Diego/For-Sale/New/?sortexpression=sp+ascending" target="_self">New</a>
+                <ul class="subpane" id="menu_item_1">
+                    <li><a href="" class="back" data-parent-menu="menu_item_1">New</a></li>
+                        <li><a href="/San-Diego/For-Sale/New/?sortexpression=sp+ascending" target="_self">Search New</a></li>
+                        <li><a href="/Specials.aspx?p=2" target="_top">Lease Specials</a></li>
+                        <li><a href="/Specials.aspx?p=2 " target="_top">View Special Offers</a></li>
+                        <li><a href="/2015-Lincoln-MKC-Reveal/" target="_top">2015 Lincoln MKC</a></li>
+                        <li><a href="/KBB-Value-Your-Trade/" target="_top">Value Your Trade</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/San-Diego/For-Sale/Used/?sortexpression=sp+ascending" target="_self">Pre-Owned</a>
+                <ul class="subpane" id="menu_item_2">
+                    <li><a href="" class="back" data-parent-menu="menu_item_2">Pre-Owned</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/Certified/" target="_self">Certified Pre-Owned</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/?sortexpression=sp+ascending" target="_self">Search Pre-Owned</a></li>
+                        <li><a href="/Specials.aspx?p=3" target="_top">Pre-Owned Hybrids</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/Low-Mileage/?Sort=mi" target="_self">Low Mileage Vehicles</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/PreAuction/" target="_self">Pre-Auction Vehicles</a></li>
+                        <li><a href="/Specials.aspx?type=Inventory" target="_top">Pre-Owned Specials</a></li>
+                        <li><a href="/iframe.aspx?iframeid=81465" target="_top">PureCars Value Your Trade</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/San-Diego/Dealer/New/Research/" target="_self">Research</a>
+                <ul class="subpane" id="menu_item_3">
+                    <li><a href="" class="back" data-parent-menu="menu_item_3">Research</a></li>
+                        <li><a href="/Lincoln-Model-Lineup-And-Brochures/" target="_self">Lincoln Brochures</a></li>
+                        <li><a href="/Model.aspx?d=800" target="_self">Lincoln MKS</a></li>
+                        <li><a href="/Model.aspx?d=451" target="_self">Lincoln MKX</a></li>
+                        <li><a href="/Model.aspx?d=873" target="_self">Lincoln MKT</a></li>
+                        <li><a href="/Model.aspx?d=190" target="_self">Lincoln Navigator</a></li>
+                        <li><a href="/Videos/Lincoln/" target="_top">Videos</a></li>
+                        <li><a href="/Lincoln-Certified-Overview/" target="_self">Lincoln Certified Overview</a></li>
+                        <li><a href="/Area/Dealer/New/Lincoln/MKC/" target="_self">2015 Lincoln MKC</a></li>
+                        <li><a href="/Why-Buy-Lincoln-Black-Label/" target="_self">Why Buy Lincoln Black Label</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Finance.aspx" target="_self">Finance</a>
+                <ul class="subpane" id="menu_item_4">
+                    <li><a href="" class="back" data-parent-menu="menu_item_4">Finance</a></li>
+                        <li><a href="/Finance.aspx" target="_self">Finance Department</a></li>
+                        <li><a href="/CreditApplication.aspx" target="_self">Credit Application</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Service.aspx" target="_self">Service &amp; Parts</a>
+                <ul class="subpane" id="menu_item_5">
+                    <li><a href="" class="back" data-parent-menu="menu_item_5">Service &amp; Parts</a></li>
+                        <li><a href="/Service.aspx" target="_self">Service Department</a></li>
+                        <li><a href="/Parts.aspx" target="_self">Parts Department</a></li>
+                        <li><a href="/Accessories.aspx" target="_self">Accessories</a></li>
+                        <li><a href="/Collision Center/" target="_top">Collision Center</a></li>
+                        <li><a href="http://owner.lincoln.com/servlet/ContentServer?pagename=Owner/Page/OwnerAdvantageRewards" target="_blank">Owner Advantage Rewards</a></li>
+                        <li><a href="/ExpressLube.aspx" target="_top">Express Lube</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_top">Service Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_top">Parts Specials</a></li>
+                        <li><a href="/Service-Appointment/" target="_self">Schedule Service</a></li>
+                        <li><a href="/Tire Finder/" target="_top">Tire Finder</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Collision Center/" target="_top">Collision</a>
+                <ul class="subpane" id="menu_item_6">
+                    <li><a href="" class="back" data-parent-menu="menu_item_6">Collision</a></li>
+                        <li><a href="/Collision Center/" target="_top">Collision Center</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Specials.aspx?p=2" target="_self">Specials</a>
+                <ul class="subpane" id="menu_item_7">
+                    <li><a href="" class="back" data-parent-menu="menu_item_7">Specials</a></li>
+                        <li><a href="/Specials.aspx?p=2" target="_top">Lease Specials</a></li>
+                        <li><a href="/Specials.aspx?type=Inventory" target="_self">Pre-Owned Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_self">Service Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_self">Parts Specials</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Departments.aspx" target="_self">Departments</a>
+                <ul class="subpane" id="menu_item_8">
+                    <li><a href="" class="back" data-parent-menu="menu_item_8">Departments</a></li>
+                        <li><a href="/InventorySearch.aspx?p=2" target="_self">New Sales</a></li>
+                        <li><a href="/InventorySearch.aspx?p=3" target="_self">Pre-Owned Sales</a></li>
+                        <li><a href="/Finance.aspx" target="_self">Finance Department</a></li>
+                        <li><a href="/Service.aspx" target="_self">Service Department</a></li>
+                        <li><a href="/Parts.aspx" target="_self">Parts</a></li>
+                        <li><a href="/Accessories.aspx" target="_self">Accessories</a></li>
+                        <li><a href="/BodyShop.aspx" target="_self">Body Shop</a></li>
+                        <li><a href="/Fleet.aspx" target="_self">Fleet</a></li>
+                        <li><a href="/ExpressLube.aspx" target="_top">Express Lube</a></li>
+                </ul>
+        </li>
+        <li class="last">
+            <a href="/ContactUs.aspx" target="_self">Information</a>
+                <ul class="subpane" id="menu_item_9">
+                    <li><a href="" class="back" data-parent-menu="menu_item_9">Information</a></li>
+                        <li><a href="/ContactUs.aspx" target="_self">Contact Us</a></li>
+                        <li><a href="/DealerProfile.aspx" target="_self">About Us</a></li>
+                        <li><a href="/MapLocation.aspx" target="_self">Map and Location</a></li>
+                        <li><a href="/Departments.aspx" target="_self">Departments</a></li>
+                        <li><a href="/Employment.aspx" target="_self">Employment</a></li>
+                        <li><a href="/Online Reviews/" target="_top">Dealer Reviews</a></li>
+                        <li><a href="/Client-Letter/" target="_top">Client Letter</a></li>
+                        <li><a href="/Staff.aspx" target="_top">Meet Our Staff</a></li>
+                </ul>
+        </li>
+				</ul>
+			</nav>
+		</div> <!-- off offscreen container -->
+		<div class="offscreen-container offscreen-container-right">
+<div class="offscreen offscreen_contact_wrapper">
+    <div class="offscreen-pane">
+		<ul>
+			<li class="offscreen_chat_integration hide-while-loading">
+				<a href="#" target="_blank" class="offscreen_chat_button">
+                    <img src="http://assets.clickmotive.com/Designs/FordMagnetic/chat-online.gif" alt="Chat Online" /></a>
+			</li> 
+					<li class="offscreen_contact_item">
+						<h4>New Sales</h4>
+						<a href="tel:877-245-6856" class="PhoneNumber tel offscreen_contact_method offscreen_contact_method_phone">877-245-6856</a>
+						<a class="offscreen_contact_method offscreen_contact_method_email"  href="/dealer/email/?d=2"><span class="icon-envelop" data-icon="&#xe002;"></span></a>
+						<a href="http://wittlincoln.com/San-Diego/For-Sale/New/?InventoryViewId=0" class="view-more-link">View Inventory</a>
+					</li>
+					<li class="offscreen_contact_item">
+						<h4>Used Sales</h4>
+						<a href="tel:877-551-3091" class="PhoneNumber tel offscreen_contact_method offscreen_contact_method_phone">877-551-3091</a>
+						<a class="offscreen_contact_method offscreen_contact_method_email" href="/dealer/email/?d=3"><span class="icon-envelop" data-icon="&#xe002;"></span></a>
+						<a href="http://wittlincoln.com/San-Diego/For-Sale/Used/?InventoryViewId=0" class="view-more-link">View Inventory</a>
+					</li>
+					<li class="offscreen_contact_item">
+						<h4>Parts</h4>
+						<a href="tel:866-943-1803" class="PhoneNumber tel offscreen_contact_method offscreen_contact_method_phone">866-943-1803</a>
+						<a class="offscreen_contact_method offscreen_contact_method_email" href="/dealer/email/?d=8"><span class="icon-envelop" data-icon="&#xe002;"></span></a>
+						<a href="/LeadDelivery/Parts" class="view-more-link">Order Parts</a>
+					</li>
+					<li class="offscreen_contact_item">
+						<h4>Service</h4>
+						<a href="tel:866-414-4795" class="PhoneNumber tel offscreen_contact_method offscreen_contact_method_phone">866-414-4795</a>
+						<a class="offscreen_contact_method offscreen_contact_method_email" href="/dealer/email/?d=4"><span class="icon-envelop" data-icon="&#xe002;"></span></a>
+						<a href="/LeadDelivery/Service" class="view-more-link">Schedule Service</a>
+					</li>
+		</ul>
+    </div>
+</div>
+		</div>
+		<div class="content-wrapper">
+			<div class="reveal-modal-bg" style="display: none"></div>
+			<span class="menu-tapback"></span>
+			<header class="site-header">
+				<span class="toggle toggle-nav">
+					<div class="fs1 toggle-icon" aria-hidden="true" data-icon="&#xe003;"></div>
+					<span class="toggle-text">Menu</span>
+				</span>
+				<h2 class="site-heading">
+					<a href="/">
+    <span class="dealer-name-text">Witt Lincoln</span>
+        <span class="dealer-name-slogan">Family Owned and Operated</span>
+
+					</a>
+				</h2>
+				<div class="dealer-make-logo">
+
+    <img src="http://assets.clickmotive.com/makes/Lincoln_light.png?h=50" />
+
+				</div>
+				<div class="department-phone-numbers">
+					<ul>
+		<li>
+			<span class="title">New Sales:</span>
+			<span class="number PhoneNumber">877-245-6856</span>
+		</li>
+		<li>
+			<span class="title">Used Sales:</span>
+			<span class="number PhoneNumber">877-551-3091</span>
+		</li>
+		<li>
+			<span class="title">Parts:</span>
+			<span class="number PhoneNumber"> 866-943-1803</span>
+		</li>
+		<li>
+			<span class="title">Service:</span>
+			<span class="number PhoneNumber">866-414-4795</span>
+		</li>
+					</ul>
+				</div>
+				<span class="toggle toggle-call">
+					<div class="fs1 call-icon" aria-hidden="true" data-icon="&#xe000;"></div>
+					<span class="call-text">Contact</span>
+				</span>
+			</header>
+			<nav class="lg-nav" id="lg_nav">
+				<ul id="top-items" class="menu-10">
+        <li class="">
+            <a href="/Default.aspx" target="_self">Home</a>
+        </li>
+        <li class="">
+            <a href="/San-Diego/For-Sale/New/?sortexpression=sp+ascending" target="_self">New</a>
+                <ul class="subpane" id="menu_item_1">
+                    <li><a href="" class="back" data-parent-menu="menu_item_1">New</a></li>
+                        <li><a href="/San-Diego/For-Sale/New/?sortexpression=sp+ascending" target="_self">Search New</a></li>
+                        <li><a href="/Specials.aspx?p=2" target="_top">Lease Specials</a></li>
+                        <li><a href="/Specials.aspx?p=2 " target="_top">View Special Offers</a></li>
+                        <li><a href="/2015-Lincoln-MKC-Reveal/" target="_top">2015 Lincoln MKC</a></li>
+                        <li><a href="/KBB-Value-Your-Trade/" target="_top">Value Your Trade</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/San-Diego/For-Sale/Used/?sortexpression=sp+ascending" target="_self">Pre-Owned</a>
+                <ul class="subpane" id="menu_item_2">
+                    <li><a href="" class="back" data-parent-menu="menu_item_2">Pre-Owned</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/Certified/" target="_self">Certified Pre-Owned</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/?sortexpression=sp+ascending" target="_self">Search Pre-Owned</a></li>
+                        <li><a href="/Specials.aspx?p=3" target="_top">Pre-Owned Hybrids</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/Low-Mileage/?Sort=mi" target="_self">Low Mileage Vehicles</a></li>
+                        <li><a href="/San-Diego/For-Sale/Used/PreAuction/" target="_self">Pre-Auction Vehicles</a></li>
+                        <li><a href="/Specials.aspx?type=Inventory" target="_top">Pre-Owned Specials</a></li>
+                        <li><a href="/iframe.aspx?iframeid=81465" target="_top">PureCars Value Your Trade</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/San-Diego/Dealer/New/Research/" target="_self">Research</a>
+                <ul class="subpane" id="menu_item_3">
+                    <li><a href="" class="back" data-parent-menu="menu_item_3">Research</a></li>
+                        <li><a href="/Lincoln-Model-Lineup-And-Brochures/" target="_self">Lincoln Brochures</a></li>
+                        <li><a href="/Model.aspx?d=800" target="_self">Lincoln MKS</a></li>
+                        <li><a href="/Model.aspx?d=451" target="_self">Lincoln MKX</a></li>
+                        <li><a href="/Model.aspx?d=873" target="_self">Lincoln MKT</a></li>
+                        <li><a href="/Model.aspx?d=190" target="_self">Lincoln Navigator</a></li>
+                        <li><a href="/Videos/Lincoln/" target="_top">Videos</a></li>
+                        <li><a href="/Lincoln-Certified-Overview/" target="_self">Lincoln Certified Overview</a></li>
+                        <li><a href="/Area/Dealer/New/Lincoln/MKC/" target="_self">2015 Lincoln MKC</a></li>
+                        <li><a href="/Why-Buy-Lincoln-Black-Label/" target="_self">Why Buy Lincoln Black Label</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Finance.aspx" target="_self">Finance</a>
+                <ul class="subpane" id="menu_item_4">
+                    <li><a href="" class="back" data-parent-menu="menu_item_4">Finance</a></li>
+                        <li><a href="/Finance.aspx" target="_self">Finance Department</a></li>
+                        <li><a href="/CreditApplication.aspx" target="_self">Credit Application</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Service.aspx" target="_self">Service &amp; Parts</a>
+                <ul class="subpane" id="menu_item_5">
+                    <li><a href="" class="back" data-parent-menu="menu_item_5">Service &amp; Parts</a></li>
+                        <li><a href="/Service.aspx" target="_self">Service Department</a></li>
+                        <li><a href="/Parts.aspx" target="_self">Parts Department</a></li>
+                        <li><a href="/Accessories.aspx" target="_self">Accessories</a></li>
+                        <li><a href="/Collision Center/" target="_top">Collision Center</a></li>
+                        <li><a href="http://owner.lincoln.com/servlet/ContentServer?pagename=Owner/Page/OwnerAdvantageRewards" target="_blank">Owner Advantage Rewards</a></li>
+                        <li><a href="/ExpressLube.aspx" target="_top">Express Lube</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_top">Service Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_top">Parts Specials</a></li>
+                        <li><a href="/Service-Appointment/" target="_self">Schedule Service</a></li>
+                        <li><a href="/Tire Finder/" target="_top">Tire Finder</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Collision Center/" target="_top">Collision</a>
+                <ul class="subpane" id="menu_item_6">
+                    <li><a href="" class="back" data-parent-menu="menu_item_6">Collision</a></li>
+                        <li><a href="/Collision Center/" target="_top">Collision Center</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Specials.aspx?p=2" target="_self">Specials</a>
+                <ul class="subpane" id="menu_item_7">
+                    <li><a href="" class="back" data-parent-menu="menu_item_7">Specials</a></li>
+                        <li><a href="/Specials.aspx?p=2" target="_top">Lease Specials</a></li>
+                        <li><a href="/Specials.aspx?type=Inventory" target="_self">Pre-Owned Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_self">Service Specials</a></li>
+                        <li><a href="/Dealer/Specials/?customerId=33421&amp;categoryName=Parts+%26+Service" target="_self">Parts Specials</a></li>
+                </ul>
+        </li>
+        <li class="">
+            <a href="/Departments.aspx" target="_self">Departments</a>
+                <ul class="subpane" id="menu_item_8">
+                    <li><a href="" class="back" data-parent-menu="menu_item_8">Departments</a></li>
+                        <li><a href="/InventorySearch.aspx?p=2" target="_self">New Sales</a></li>
+                        <li><a href="/InventorySearch.aspx?p=3" target="_self">Pre-Owned Sales</a></li>
+                        <li><a href="/Finance.aspx" target="_self">Finance Department</a></li>
+                        <li><a href="/Service.aspx" target="_self">Service Department</a></li>
+                        <li><a href="/Parts.aspx" target="_self">Parts</a></li>
+                        <li><a href="/Accessories.aspx" target="_self">Accessories</a></li>
+                        <li><a href="/BodyShop.aspx" target="_self">Body Shop</a></li>
+                        <li><a href="/Fleet.aspx" target="_self">Fleet</a></li>
+                        <li><a href="/ExpressLube.aspx" target="_top">Express Lube</a></li>
+                </ul>
+        </li>
+        <li class="last">
+            <a href="/ContactUs.aspx" target="_self">Information</a>
+                <ul class="subpane" id="menu_item_9">
+                    <li><a href="" class="back" data-parent-menu="menu_item_9">Information</a></li>
+                        <li><a href="/ContactUs.aspx" target="_self">Contact Us</a></li>
+                        <li><a href="/DealerProfile.aspx" target="_self">About Us</a></li>
+                        <li><a href="/MapLocation.aspx" target="_self">Map and Location</a></li>
+                        <li><a href="/Departments.aspx" target="_self">Departments</a></li>
+                        <li><a href="/Employment.aspx" target="_self">Employment</a></li>
+                        <li><a href="/Online Reviews/" target="_top">Dealer Reviews</a></li>
+                        <li><a href="/Client-Letter/" target="_top">Client Letter</a></li>
+                        <li><a href="/Staff.aspx" target="_top">Meet Our Staff</a></li>
+                </ul>
+        </li>
+				</ul>
+			</nav>
+
+			
+   
+
+<header class="page-header">
+    <div class="inner-container">
+        <h1 class="page-title">
+            <span class="title">
+                 2015 Lincoln MKC Premiere 100A FWD
+            </span>
+            
+                <a href="tel:877-245-6856" class="PhoneNumber tel phone">877-245-6856</a>
+        </h1>
+        <article class="title-blurb show">
+            <p><span class="blurb-list-item">Exterior: Silver Sand Metallic</span><span class="blurb-list-delimiter">, </span>
+<span class="blurb-list-item">Interior: Ebony</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">Status: In Stock</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">Mileage: 30</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">Engine: 2.0L I4 GTDI ECOBOOST ENG</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">Trans: Automatic</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">Stock#: 215708</span><span class="blurb-list-delimiter">, </span>
+	<span class="blurb-list-item">VIN #: 5LMCJ1A99FUJ46159</span><span class="blurb-list-delimiter">, </span>
+</p>
+        </article>
+    </div>
+</header>
+
+
+
+
+			
+
+			
+
+
+
+
+
+
+<div class="content-panel vdp_wrapper basic-panel">
+    <div class="inner-container">
+        <section class="vdp_top vdp_section">
+
+        <div class="tablet_price_buttons_wrap">
+				<div class="vdp_price_breakdown">
+					<div class="price-breakdown">
+						
+
+<section class="incentive-pricing-wrapper ">
+
+        <dl class="discount-pricing incentives">
+            <dt class="vehicle-price-discounted-label display">No Hassle </dt>
+            <dd class="vehicle-price-discounted-price display">$30,245<sup>*</sup></dd>
+            <dt class="vehicle-price-base-label">MSRP</dt>
+            <dd class="vehicle-price-base-price">$33,995<sup>1</sup></dd>
+            <dt class="vehicle-price-discount-label">Instant Savings</dt>
+            <dd class="vehicle-price-discount-value">-$3,750<sup>*</sup></dd>
+        </dl>
+
+
+</section> <!-- End .incentive-pricing-wrapper -->
+
+
+					</div>
+				</div>
+
+				<div class="vdp_cta_buttons">
+					<ul class="vdp_button_list button-group">
+    
+    
+
+        <li class="btn_container request-price-page-button">
+            <a class="button request-price-link vehicle-enticement-page-link" href="/LeadDelivery/EnticementLead?title=New&amp;vehicleId=41277020">Drive It Today</a>
+        </li>
+        <li class="btn_container request-price-modal-button">
+            <a href="#0" class="button request-price-link vehicle-enticement-modal-link" data-reveal-id="enticement-modal">Drive It Today</a>
+        </li>
+        <div id="enticement-modal" class="reveal-modal modal enticement-custom">
+			<a class="close-reveal-modal">&#215;</a> 
+			<h3>Drive It Today</h3>
+            <p>Simply fill out this form to request additional information on this vehicle.</p>
+                <div class="email_dealer_wrapper">
+                    <section class="form_wrapper">
+
+<form id="InputForm" method="POST" class="department_forms mobile_form row omnitureForm" data-leadDeliveryForm="" novalidate="novalidate">
+    <div class="email_dealer_user_info">
+				        
+        <!-- EnticementLead -->
+        <div id="contactStepDiv" class="department_form_third_panel">
+            <input id="Lead_VehicleId" name="Lead.VehicleId" type="hidden" value="41277020" />
+            <input id="Lead_ModelYear" name="Lead.ModelYear" type="hidden" value="2015" />
+            <input id="Lead_MakeId" name="Lead.MakeId" type="hidden" value="25" />
+            <input id="Lead_ModelId" name="Lead.ModelId" type="hidden" value="2424" />
+            <input id="Lead_Model" name="Lead.Model" type="hidden" value="MKC" />
+            <input id="Lead_ProductName" name="Lead.ProductName" type="hidden" value="SUV" />
+            <input id="Lead_Make" name="Lead.Make" type="hidden" value="Lincoln" />
+            <input id="Lead_Nameplate" name="Lead.Nameplate" type="hidden" value="mkc" />
+            <input id="Lead_Segment" name="Lead.Segment" type="hidden" value="crossover" />
+            <!-- LeadModel -->
+
+<input type="hidden" id="CustomerId" name="CustomerId" value="33421"/>
+<input id="Lead_DepartmentId" name="Lead.DepartmentId" type="hidden" value="2" />
+<input id="Lead_PageName" name="Lead.PageName" type="hidden" value="Vehicle" />
+<input id="Lead_RootPath" name="Lead.RootPath" type="hidden" value="wittlincoln.com" />
+
+
+<fieldset class="contact-information-wrapper">
+	<legend>Contact Information</legend>
+
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal name" autocorrect="false" class="form_input potential-invalid" data-errorKey="FullName" id="Lead_ContactInformation_FullName" name="Lead.ContactInformation.FullName" pattern="[A-Za-z]{2,25} [A-Za-z]{2,25}" placeholder="First &amp; Last Name" required="required" type="text" value="" />
+	<label class="alt-label" for="Lead_ContactInformation_FullName">Name*</label>
+	<small class="error error-message">First & Last Name is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal tel" class="form_input potential-invalid" data-errorKey="Phone" id="Lead_ContactInformation_Phone" name="Lead.ContactInformation.Phone" pattern="\({0,1}[0-9]{3}\){0,1}[ -]{0,1}[0-9]{3}-{0,1}[0-9]{4}" placeholder="###-###-####" required="required" title="Must be a 10 digit phone number" type="tel" value="" />
+	<label class="alt-label" for="Lead_ContactInformation_Phone">Phone Number*</label>
+	<small class="error error-message">A valid Phone Number is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal email" class="form_input potential-invalid" data-errorKey="Email" id="Lead_ContactInformation_Email" name="Lead.ContactInformation.Email" placeholder="exampleEmail@sample.com" required="required" type="email" value="" />
+	<label class="alt-label" for="Lead_ContactInformation_Email">Email*</label>
+	<small class="error error-message">A valid E-mail is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal postal-code" class="form_input potential-invalid" data-errorKey="ZipCode" id="Lead_ContactInformation_ZipCode" name="Lead.ContactInformation.ZipCode" pattern="([0-9]{5}(-[0-9]{4})?)" placeholder="5 Digit Zip" required="required" title="Must be a valid zip code" type="tel" value="" />
+	<label class="alt-label" for="Lead_ContactInformation_ZipCode">Zip Code*</label>
+	<small class="error error-message">A valid Zip Code is required</small>
+</div>
+
+</fieldset>
+
+
+            
+            <div class="validationDiv" data-validationsummary=""></div>
+            <button class="action-load" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
+                    </section>
+                </div>
+        </div>
+        <li class="btn_container incentives-page-button">
+            <a href="#0" class="button vehicle-incentives-page-link" data-incentives-uri="/Inventory/VehicleIncentives?inventoryViewId=4813">Current Incentives</a>
+        </li>
+        <li class="btn_container incentives-modal-button">
+            <a href="#0" class="button vehicle-incentives-modal-link" data-reveal-id="incentives-modal">Current Incentives</a>
+        </li>
+        <div id="incentives-modal" class="reveal-modal modal large">
+            <a class="close-reveal-modal">&#215;</a> 
+            <h3>Current Incentives</h3>
+            <div class="contents">Loading...</div>
+        </div>
+    
+
+    
+    <li class="btn_container email-dealer-btn">
+        <a class="button" href="/Inventory/VehicleLead?viewId=4813&amp;vehicleId=41277020&amp;customerId=33421">Email Seller</a>
+    </li>
+    
+        <li class="btn_container">
+            <a class="button video-modal-link" href="http://vid.dmotorworks.com/vid5/?client=FORD&amp;vid=1AB18AE8400C5585E0531C127C6402C6&amp;h=500&amp;w=603">Vehicle Video</a>
+            <a class="button video-page-link" href="http://vid.dmotorworks.com/vid5/?client=FORD&amp;vid=1AB18AE8400C5585E0531C127C6402C6&amp;h=500&amp;w=603&mobile=true">Vehicle Video</a>
+        </li>
+</ul>
+				</div>
+			</div>
+
+        </section>
+
+        <div class="vdp-right-wrap">
+            <section class="vdp_email_form">
+				<section class="form_wrapper">
+                    <h4><span class="icon-envelop" data-icon="î€‚"></span> Email Seller</h4>
+					
+
+<form id="InputForm" method="POST" class="department_forms mobile_form row omnitureForm" novalidate="novalidate" data-leadDeliveryForm="" novalidate="novalidate">
+	<input type="hidden" id="CustomerId" name="CustomerId" value="33421"/>
+	<input id="Lead_DepartmentId" name="Lead.DepartmentId" type="hidden" value="2" />
+	<input id="Lead_PageName" name="Lead.PageName" type="hidden" value="Vehicle" />
+	<input id="Lead_RootPath" name="Lead.RootPath" type="hidden" value="wittlincoln.com" />
+    <fieldset>
+		<legend>Email Seller</legend>
+
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal name" autocorrect="false" class="form_input potential-invalid" data-errorKey="FullName" id="FullName" name="FullName" pattern="[A-Za-z]{2,25} [A-Za-z]{2,25}" placeholder="First &amp; Last Name" required="required" type="text" value="" />
+	<label class="alt-label" for="FullName">Name*</label>
+	<small class="error error-message">First & Last Name is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal tel" class="form_input potential-invalid" data-errorKey="Phone" id="Phone" name="Phone" pattern="\({0,1}[0-9]{3}\){0,1}[ -]{0,1}[0-9]{3}-{0,1}[0-9]{4}" placeholder="###-###-####" required="required" title="Must be a 10 digit phone number" type="tel" value="" />
+	<label class="alt-label" for="Phone">Phone Number*</label>
+	<small class="error error-message">A valid Phone Number is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal email" class="form_input potential-invalid" data-errorKey="Email" id="Email" name="Email" placeholder="exampleEmail@sample.com" required="required" type="email" value="" />
+	<label class="alt-label" for="Email">Email*</label>
+	<small class="error error-message">A valid E-mail is required</small>
+</div>
+
+<div class="input-wrapper">
+	<input autocomplete="section-personal postal-code" class="form_input potential-invalid" data-errorKey="ZipCode" id="ZipCode" name="ZipCode" pattern="([0-9]{5}(-[0-9]{4})?)" placeholder="5 Digit Zip" required="required" title="Must be a valid zip code" type="tel" value="" />
+	<label class="alt-label" for="ZipCode">Zip Code*</label>
+	<small class="error error-message">A valid Zip Code is required</small>
+</div>
+
+    </fieldset>
+	<fieldset>
+		<legend>Comments</legend>
+		<label class="alt-label" for="Lead_ContactInformation_Comments">Comments</label>
+		<textarea class="potential-invalid" cols="20" data-errorKey="Comments" id="Lead_ContactInformation_Comments" name="Lead.ContactInformation.Comments" placeHolder="Comments" rows="2">
+Please email me about the 2015 Lincoln MKC (STK #: 215708)</textarea>
+		<small class="error error-message">Must enter a Comment</small>
+    </fieldset>
+	<div>
+		<input id="Lead_Vehicle_VehicleId" name="Lead.Vehicle.VehicleId" type="hidden" value="41277020" />
+		<input id="Certified" name="Certified" type="hidden" value="False" />
+		<input type="hidden" id="formTimeElapsed" name="formTimeElapsed">
+		<input type="hidden" id="formReceivedFocus" name="formReceivedFocus">
+		<input type="hidden" id="formReceivedClick" name="formReceivedClick">
+	</div>
+	<div class="validationDiv" data-validationsummary=""></div>
+    <button type="submit" >Submit</button>
+</form>
+				</section>
+            </section>
+            <section class="row vdp_section epa_veh_btn_section">
+                <div class="epa_vehicle_buttons">
+	                <div class="epa_ratings" data-epa-city="EPA-Est City MPG* 20" data-epa-hwy="EPA-Est Hwy MPG* 29 "></div>
+
+				    <div class="vehicle_button_wrapper">
+					    <ul>
+							
+									<li>
+										
+		<a href=http://www.inventory.lincoln.com/services/inventory/WindowSticker.pdf?vin=5LMCJ1A99FUJ46159 class="buttonLink " data-modal-height="0" data-modal-width="0" rel="nofollow" target="_blank">
+			<img src=http://assets.clickmotive.com/vehicle-assets/vehicle-buttons/ViewWindowSticker.png alt="View Window Sticker" />    
+		</a>
+
+
+
+									</li>
+									<li class="vehicle-button">
+										
+		<a href=/quickcredit class="buttonLink " data-modal-height="0" data-modal-width="0" rel="nofollow" target="_blank">
+			<img src=http://assets.clickmotive.com/vehicle-assets/vehicle-buttons/Credit.png alt="Credit" />    
+		</a>
+
+
+
+									</li>
+					    </ul>
+				    </div>
+			    </div>
+            </section>
+                <section class="vdp_section sim-veh-section">
+                    
+<div class="module">
+	<h4>Similar Vehicles</h4>
+	<ul class="similar-vehicle-list dept-2">
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Select-101A-Silver-SUV/41550197/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/inventory/inventory/dealers/WebIOL2/2000026/2061175/640x480/33421/5LMCJ1A92FUJ47587/0586032254334938b41db5683161e0e6!20150827050134000.jpg?w=169" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC Select 101A</h6>
+	                            <span class="price"> $34,150</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2016-Premiere-100A-Black-SUV/42085231/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/forddig/Lincoln/MKC Base/2016/BP3TT-FULL-EXT/Image[|Lincoln|MKC Base|2016|1|1.|100A...G1..881.50A.643.999.FWD.892.]/EXT/1/vehicle.png?w=169&amp;rc=1" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2016 Lincoln MKC Premiere 100A</h6>
+	                            <span class="price"> $34,155</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Select-101A-Blue-SUV/41615455/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/inventory/inventory/dealers/WebIOL2/2000026/2061175/640x480/33421/5LMCJ1A94FUJ48174/a4bd4ff5303d4ecdaf0d74456959e06f!20150827050139000.jpg?w=169" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC Select 101A</h6>
+	                            <span class="price"> $34,780</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Select-101A-Silver-SUV/41967586/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/forddig/Lincoln/MKC Base/2015/BP3TT-FULL-EXT/Image[|Lincoln|MKC Base|2015|1|1.|101A...SK..882.644.671.661.999.FWD.893.]/EXT/1/vehicle.png?w=169&amp;rc=1" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC Select 101A</h6>
+	                            <span class="price"> $34,820</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-SUV/42106774/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/NotAvailable.jpg?w=169" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC</h6>
+	                            <span class="price"> $34,845</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Select-101A-Red-SUV/41615457/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/inventory/inventory/dealers/WebIOL2/2000026/2061175/640x480/33421/5LMCJ1A90FUJ47586/9bfc5d9b87704e77ac3b146667477ad6!20150827050123000.jpg?w=169" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC Select 101A</h6>
+	                            <span class="price"> $35,225</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Reserve-102A-Blue-SUV/41615458/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/inventory/inventory/dealers/WebIOL2/2000026/2061175/640x480/33421/5LMCJ1A93FUJ47582/202380c8a9c14a099bc97d072cf9869a!20150827050138000.jpg?w=169" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2015 Lincoln MKC Reserve 102A</h6>
+	                            <span class="price"> $37,900</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2016-Select-200A-Silver-SUV/41967596/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/forddig/Lincoln/MKC Base/2016/BP3TT-FULL-EXT/Image[|Lincoln|MKC Base|2016|1|1.|200A...UX..882.661.644.999.FWD.893.]/EXT/1/vehicle.png?w=169&amp;rc=1" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2016 Lincoln MKC Select 200A</h6>
+	                            <span class="price"> $37,985</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2016-Select-200A-SUV/42085227/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/forddig/Lincoln/MKC Base/2016/BP3TT-FULL-EXT/Image[|Lincoln|MKC Base|2016|1|1.|200A...H6..882.661.644.999.FWD.893.]/EXT/1/vehicle.png?w=169&amp;rc=1" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2016 Lincoln MKC Select 200A</h6>
+	                            <span class="price"> $38,015</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	            <li class="similar-vehicle-item">
+			        <figure class="similar-vehicle-fig">
+				        <a class="aside-vehicle-wrap" href="/San-Diego/For-Sale/New/Lincoln/MKC/2016-Select-200A-Blue-SUV/42085230/">
+	                        <div class="img-wrap">
+					            <img class="lazy" src="http://assets.clickmotive.com/NotAvailable.jpg?w=169" data-original="http://assets.clickmotive.com/forddig/Lincoln/MKC Base/2016/BP3TT-FULL-EXT/Image[|Lincoln|MKC Base|2016|1|1.|200A...N1..882.661.644.999.FWD.893.]/EXT/1/vehicle.png?w=169&amp;rc=1" />
+	                        </div>
+					        <figcaption>
+	                            <h6>2016 Lincoln MKC Select 200A</h6>
+	                            <span class="price"> $38,015</span>
+					        </figcaption>
+				        </a>
+			        </figure>
+	            </li>
+	</ul>
+</div>
+                </section>
+        </div>
+        <section class="vdp_section collapsable_section_wrap">
+	        <div class="section-container accordion">
+
+
+    <section class="vdp_poplinks vdp_collapsable active">
+        <p class="title" data-section-title=""><span>Popular Links</span></p>
+        <div class="content vdp_section" data-section-conent="">
+            				 
+    <ul class="vdp_pop_link_wrap button-group">
+        
+				 
+    <li class="pop_link_item">
+       <a class="vdp_pop_link" href="quickcredit" target="_top">
+			<span class="vdp_pop_link_icon">
+				<img src="http://assets.clickmotive.com/vehicle-assets/popular-links/PopularLinks_CreditPreApproval_Normalized.png" />
+			</span>
+			<span class="vdp_pop_link_title">
+				Credit Pre-Approval
+			</span>
+        </a>
+    </li>
+    <li class="pop_link_item">
+       <a class="vdp_pop_link" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Premiere-100A-Silver-SUV/41277020/RequestInformation" target="_top">
+			<span class="vdp_pop_link_icon">
+				<img src="http://assets.clickmotive.com/vehicle-assets/popular-links/PopularLinks_RequestInfo_Normalized.png" />
+			</span>
+			<span class="vdp_pop_link_title">
+				Request Information
+			</span>
+        </a>
+    </li>
+    <li class="pop_link_item">
+       <a class="vdp_pop_link" href="/San-Diego/For-Sale/New/Lincoln/MKC/2015-Premiere-100A-Silver-SUV/41277020/TestDrive" target="_top">
+			<span class="vdp_pop_link_icon">
+				<img src="http://assets.clickmotive.com/vehicle-assets/popular-links/PopularLinks_ScheduleTestDrive_Normalized.png" />
+			</span>
+			<span class="vdp_pop_link_title">
+				Schedule Test Drive
+			</span>
+        </a>
+    </li>
+    <li class="pop_link_item">
+       <a class="vdp_pop_link" href="/KBB-Value-Your-Trade/" target="_top">
+			<span class="vdp_pop_link_icon">
+				<img src="http://assets.clickmotive.com/vehicle-assets/popular-links/PopularLinks_TradeEvaluation_Normalized.png" />
+			</span>
+			<span class="vdp_pop_link_title">
+				Trade Evaluation
+<sup>5</sup>			</span>
+        </a>
+    </li>
+
+    </ul>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="vdp_details vdp_collapsable active">
+        <p class="title" data-section-title=""><span>Vehicle Features</span></p>
+        <div class="content long_list vdp_section" data-section-content="">
+           
+<ul>
+        <li>Engine Description: 2.0L I4 GTDI ECOBOOST ENG</li>
+        <li>Drivetrain: FWD</li>
+    <li>EPA-Est City*: 20</li>
+    <li>EPA-Est Highway*: 29</li>
+        <li>EPA Classification: Small Sport Utility Vehicles 2WD</li>
+        <li>Wheelbase Code: 105.9</li>
+</ul>        </div>
+    </section>
+    <section class="vdp_options vdp_collapsable active">
+        <p class="title" data-section-title=""><span>Vehicle Details</span></p>
+        <div class="content long_list vdp_section" data-section-content="">
+
+<ul>
+
+
+				<li>Tires - Rear Performance</li>
+				<li>Mirror Memory</li>
+				<li>Back-Up Camera</li>
+				<li>Keyless Start</li>
+				<li>Headlights-Auto-Leveling</li>
+				<li>Turbocharged</li>
+				<li>Power Door Locks</li>
+				<li>Power Mirror(s)</li>
+				<li>Security System</li>
+				<li>4-Wheel Disc Brakes</li>
+				<li>Rear Bench Seat</li>
+				<li>Remote Engine Start</li>
+				<li>Adjustable Steering Wheel</li>
+				<li>Temporary Spare Tire</li>
+				<li>Aluminum Wheels</li>
+				<li>Front Side Air Bag</li>
+				<li>Child Safety Locks</li>
+				<li>Keyless Entry</li>
+				<li>Auto-Dimming Rearview Mirror</li>
+				<li>Rear Parking Aid</li>
+				<li>Auxiliary Audio Input</li>
+				<li>AM/FM Stereo</li>
+				<li>Floor Mats</li>
+				<li>Heated Mirrors</li>
+				<li>ABS</li>
+				<li>Traction Control</li>
+				<li>Fog Lamps</li>
+				<li>HID headlights</li>
+				<li>Trip Computer</li>
+				<li>Passenger Air Bag</li>
+				<li>Cruise Control</li>
+				<li>Rear Defrost</li>
+				<li>Satellite Radio</li>
+				<li>MP3 Player</li>
+				<li>Tire Pressure Monitor</li>
+				<li>Steering Wheel Audio Controls</li>
+				<li>Seat Memory</li>
+				<li>A/C</li>
+				<li>Power Windows</li>
+				<li>Intermittent Wipers</li>
+				<li>Variable Speed Intermittent Wipers</li>
+				<li>Driver Illuminated Vanity Mirror</li>
+				<li>Leather Steering Wheel</li>
+				<li>Bluetooth Connection</li>
+				<li>Stability Control</li>
+				<li>Brake Assist</li>
+				<li>Passenger Air Bag Sensor</li>
+				<li>Multi-Zone A/C</li>
+				<li>Passenger Vanity Mirror</li>
+				<li>Rear Head Air Bag</li>
+				<li>Privacy Glass</li>
+				<li>Driver Vanity Mirror</li>
+				<li>Passenger Illuminated Visor Mirror</li>
+				<li>Rear Spoiler</li>
+				<li>Front Head Air Bag</li>
+				<li>Climate Control</li>
+				<li>Front Wheel Drive</li>
+				<li>Daytime Running Lights</li>
+				<li>Pass-Through Rear Seat</li>
+				<li>Tires - Front Performance</li>
+				<li>Knee Air Bag</li>
+				<li>Driver Air Bag</li>
+				<li>CD Player</li>
+				<li>Power Steering</li>
+				<li>Engine Immobilizer</li>
+				<li>Automatic Headlights</li>
+				<li>Brake Actuated Limited Slip Differential</li>
+
+
+</ul>        </div>
+    </section>
+
+
+
+
+    <section class="paymentcalculator vdp_collapsable active">
+        <p class="title" data-section-title=""><span>Payment Calculator</span></p>
+        <div class="content vdp_section" data-section-content="" data-payment-calculator="">
+
+<div class="pc_box variable_wrapper price_variable_wrapper">
+    <label for="pc_price">Vehicle Price</label>
+    <input id="pc_price" type="text" value="$30,245">
+</div>
+<div class="pc_box variable_wrapper downpayment_variable_wrapper">
+    <label for="pc_downpayment">Cash or Trade</label>
+    <input id="pc_downpayment" type="text" value="$0">
+</div>
+<div class="pc_box variable_wrapper rate_variable_wrapper">
+    <label for="pc_rate">Interest Rate</label>
+    <input id="pc_rate" type="text" value="7.5%" >
+</div>
+<div class="pc_box last_variable_wrapper term_variable_wrapper">
+    <label for="pc_term">Monthly Term</label>
+    <input id="pc_term" type="text" value="60" >
+</div>
+<div class="pc_box result_wrapper">
+    <span id="pc_result"></span>
+    <a class="button" href="/creditapplication">Apply for Credit</a>
+    <span class="disclaimer">*Payment for estimation purposes only</span>
+</div>
+        </div>
+    </section>
+
+
+
+
+
+	<section id="map-location" class="map-and-location vdp_collapsable active">
+        <p class="title" data-section-title=""><span>Map &amp; Location</span></p>
+		<div class="content vdp_section" data-section-content="" >
+                <span class="map-address-box">
+                    <span class="dealer">Witt Lincoln</span>
+                    <span>588 Camino Del Rio North,</span>
+                    <span>San Diego, CA 92108</span>
+                </span>
+<a href="/MapLocation.aspx" class="img-wrap map-wrap">
+	<img src="http://assets.clickmotive.com/NotAvailable.jpg?w=140" data-src0="http://maps.googleapis.com/maps/api/staticmap?center=32.7646780000000000,-117.1592709999999900&amp;zoom=13&amp;maptype=roadmap&amp;markers=color:%PALETTE_COLOR%%7C32.7646780000000000,-117.1592709999999900&amp;markers=size:mid&amp;sensor=false&amp;size=400x350" data-src768="http://maps.googleapis.com/maps/api/staticmap?center=32.7646780000000000,-117.1592709999999900&amp;zoom=13&amp;maptype=roadmap&amp;markers=color:%PALETTE_COLOR%%7C32.7646780000000000,-117.1592709999999900&amp;markers=size:mid&amp;sensor=false&amp;size=1000x350" class="lazy" />
+</a>		</div>
+	</section>
+
+
+
+
+
+                
+                
+                    <div class="hide" data-incentives='{ "viewId":"4813", "dealerId":"33421", "vin":"5LMCJ1A99FUJ46159", "zipCode":"92108"}'>
+                        <ul class="incentives">
+                        </ul>
+                    </div>
+	        </div>
+	    </section>
+		<div id="incentives-summary-modal-0" class="reveal-modal modal large">
+			<a class="close-reveal-modal">&#215;</a> 
+            <h3>Current Incentives</h3>
+			<div class="contents">Loading...</div>
+		</div>
+		<div id="incentives-summary-modal-1" class="reveal-modal modal large">
+			<a class="close-reveal-modal">&#215;</a> 
+            <h3>Current Incentives</h3>
+			<div class="contents">Loading...</div>
+		</div>
+		<div id="vehicle-video-modal" class="reveal-modal">
+			<a class="close-reveal-modal">&#215;</a>
+			<div class="modal-contents">
+				<div>Loading...</div>
+			</div>
+		</div>
+        <div id="vehicle-conditional-incentive-modal" class="reveal-modal">
+            <a class="close-reveal-modal">&#215;</a>
+            <div class="modal-contents">
+            </div>
+        </div>
+
+            <section class="vdp_bottom_buttons row vdp_section">
+                <a class="button" href="/Inventory/SimilarVehicles/New/41277020">Similar Vehicles</a>
+            </section>
+    </div>
+    <input type="hidden" id="MobileTouchWebPageName" value="vehicle" />
+</div>
+<div class="disclaimers-wrap">
+	<div class="page-disclaimer">
+			<div class="disclaimer">
+				<p>*† Based on 2015 EPA mileage ratings. Use for comparison purposes only. Your actual mileage will vary, depending on how you drive and maintain your vehicle.</p>
+			</div>
+			<div class="disclaimer">
+				<p>Although every reasonable effort has been made to insure the accuracy of the information contained on this site, absolute accuracy cannot be guaranteed. This site, and all information and materials appearing on it, are presented to the user "as is" without warranty of any kind, either express or implied. All vehicles are subject to prior sale. *Instant savings includes Witt discount and available factory rebates. Price does not include applicable tax, title, license, processing, documentation and/or electronic filing fees, and destination charges. Not all customers will qualify. Residency requirements do apply.  Price does not include applicable tax, title, license, processing, documentation and/or electronic filing fees, and destination charges. </p>
+			</div>
+	</div>
+
+	<div class="page-disclaimer">
+		<section class="vdp_disclaimer disclaimer incentive_details"></section>
+	</div>
+</div>
+
+
+			<footer class="site-footer">
+				<div class="inner-container">
+					 <ul class="footer-links">
+						 <li class="footer-address"><a href="/MapLocation.aspx">588 Camino Del Rio North San Diego, CA 92108</a></li>
+						<li><a href="/ConsumerSiteMap.aspx">Site Map</a></li>
+						<li><a href="/Definitions-and-Disclosures/">Additional Disclosures</a></li>
+						<li><a href="http://www.forddirectprivacy.com/" target="_blank">Privacy Policy</a></li>
+						
+					</ul>
+					<ul class="footer-links footer-copyright">
+						<li>&copy;2015 FordDirect</li>
+					</ul>
+				</div>
+			</footer>
+			
+			
+		</div> <!-- off content wrapper -->
+	</div> <!-- off main wrapper -->
+	<div class="backtotop"><span class="icon-arrow-up"></span><span class="btt-text">top</span></div>
+	
+    
+    
+    <input type="hidden" id="view-discount-label" value="Instant Savings" />
+    <input type="hidden" id="view-discounted-price-label" value="No Hassle " />
+    <input type="hidden" id="view-base-price-label" value="MSRP" />
+    <input type="hidden" id="view-default-price-label" value="MSRP" />
+    <input type="hidden" id="view-zero-price-label" value="Call for Price" />
+	<input type="hidden" id="view-conditional-price-label" value="Conditional Net Price" />
+	<input type="hidden" id="view-inventory-view-title" value="New" />
+		<input type="hidden" id="view-pure-cars-customer-id" value="70002131" />
+
+    <input type="hidden" name="SiteId" id="SiteId" value="33421" />
+    <input type="hidden" name="DealerId" class="vehicle-dealerid" value="33421" />
+    <input type="hidden" name="Make" class="vehicle-make" value="Lincoln" />
+    <input type="hidden" name="Model" class="vehicle-model" value="MKC" />
+    <input type="hidden" name="Year" class="vehicle-year" value="2015" />
+    <input type="hidden" name="VIN" class="vehicle-vin" value="5LMCJ1A99FUJ46159" />
+    <input type="hidden" name="MiscPrice1" class="vehicle-misc-price1" value="31332"/>
+    <input type="hidden" name="MiscPrice2" class="vehicle-misc-price2" value="32850"/>
+    <input type="hidden" name="Global_DepartmentId" id="Global_DepartmentId" value="2">
+    <input type="hidden" name="Nameplate" class="vehicle-nameplate" value="mkc"/>
+    <input type="hidden" name="Segment" class="vehicle-segment" value="crossover"/>
+    <input type="hidden" name="Category" class="vehicle-category" value=""/>
+    <input type="hidden" name="ProductName" class="vehicle-productname" value="SUV"/>
+
+	<!-- off wrapper -->
+	<script type="text/javascript" src="http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/vendor/require.js"></script>
+
+<script type="text/javascript">
+	var aPlanConfig = false;
+	var xPlanConfig = false;
+    var disableIncentivePricing = true;
+    var enableConditionalPricing = false;
+    var enableConditionalNetPriceDisplay = false;
+    var searchApiMaxVins = 20;
+    var paCodes = {"33421":"10473"};
+    var CM = CM || {};
+    CM.AppSettings = CM.AppSettings || {};
+    CM.AppSettings.FordIncentiveUrl = "http://www.inventory.ford.com/services/inventory/Search.json?vin={0}&amp;dealerPACode={1}&amp;postalCode={2}&amp;vehicleStageFilter=inproduction;onlot;intransit&amp;showPaymentEstimator=true&amp;appContext=DC";
+    
+</script>
+
+<script type="text/x-mustache-template" id="incentive-list-template">
+	<ul class="incentive-container">
+		{{#incentives}}
+			{{#isFirstAprIncentive}}
+			<li class="incentive-list-item">
+				<div class="incentive-details separator">
+					<h5>or</h5>
+				</div>
+			</li>
+			{{/isFirstAprIncentive}}
+			<li class="incentive-list-item">
+				<section class="incentive-details">
+					{{#hasCashIncentive}}
+						<section>
+							<h5>{{Details.Name}}<sup>{{index}}{{#hasAPRIncentive}}a{{/hasAPRIncentive}}</sup></h5>
+							<p>${{Details.Amount}}</p>
+						</section>
+					{{/hasCashIncentive}}
+					{{#hasAPRIncentive}}
+						<section>
+							<h5>APR Financing<sup>{{index}}{{#hasCashIncentive}}b{{/hasCashIncentive}}</sup></h5>
+							<ul>
+								{{#aprTerms}}
+									<li>
+										{{APR}}% for {{Term}} mo
+									</li>
+								{{/aprTerms}}
+							</ul>
+						</section>
+					{{/hasAPRIncentive}}
+				</section>
+				<section class="incentive-disclaimer">
+					{{#hasCashIncentive}}
+						<p class="cash-disclaimer"><sup>{{index}}{{#hasAPRIncentive}}a{{/hasAPRIncentive}}</sup>
+							{{Details.Disclaimer}}
+						</p>
+					{{/hasCashIncentive}}	
+					{{#hasAPRIncentive}}
+						<p class="cash-disclaimer"><sup>{{index}}{{#hasCashIncentive}}b{{/hasCashIncentive}}</sup>
+							{{aprDisclaimer}}
+						</p>
+					{{/hasAPRIncentive}}
+				</section>
+			</li>
+		{{/incentives}}
+	</ul>
+</script>
+
+<script type="text/x-mustache-template" id="change-zip-template">
+	<section id="changezip-container">
+		<input type="text" id="incentiveZip" class="text" />
+		<button id="btnChangeZip" class="btn">
+			Change Zip
+		</button>
+	</section>
+</script>
+
+<script type="text/x-mustache-template" id="misc-price-template">
+	{{#ShowAPlan}}
+		<section class="a-plan-container">
+            <dl class="discount-pricing">
+			    <dt class="vehicle-price-base-label">
+				    {{APlanLabel}}
+			    </dt>
+			    <dd class="vehicle-price-base-price">
+				    ${{#formatNumber}}{{APlanPrice}}{{/formatNumber}}
+			    </dd>
+            </dl>
+		    {{#ShowAPlanDetail}}
+                <p class="after-discounts-link-container">
+                    After Discounts (<a href="#" class="show-pricing-detail-aplan" data-reveal-id="vehicle-pricing-modal">Details</a>)
+                </p>	
+		    {{/ShowAPlanDetail}}
+		</section>
+	{{/ShowAPlan}}
+	{{#ShowXPlan}}
+        <section class="x-plan-container">
+            <dl class="discount-pricing">
+			    <dt class="vehicle-price-base-label">
+				    {{XPlanLabel}}
+			    </dt>
+			    <dd class="vehicle-price-base-price">
+				    ${{#formatNumber}}{{XPlanPrice}}{{/formatNumber}}
+			    </dd>
+            </dl>
+		    {{#ShowXPlanDetail}}
+                <p class="after-discounts-link-container">
+                    After Discounts (<a href="#" class="show-pricing-detail-xplan" data-reveal-id="vehicle-pricing-modal">Details</a>)
+                </p>
+		    {{/ShowXPlanDetail}}
+        </section>
+	{{/ShowXPlan}}
+</script>
+
+<script type="text/x-mustache-template" id="misc-price-template-inline">
+	{{#ShowAPlan}}
+		<section class="a-plan-container">
+            <dl class="discount-pricing">
+			    <dt class="vehicle-price-base-label">
+				    {{APlanLabel}}{{#hasIncentives}} w/ Cash Back{{/hasIncentives}}
+			    </dt>
+			    <dd class="vehicle-price-base-price">
+				    ${{#formatNumber}}{{APlanPrice}}{{/formatNumber}}
+			    </dd>
+            </dl>
+            
+		</section>
+	{{/ShowAPlan}}
+	{{#ShowXPlan}}
+        <section class="x-plan-container">
+            <dl class="discount-pricing">
+			    <dt class="vehicle-price-base-label">
+				    {{XPlanLabel}}{{#hasIncentives}} w/ Cash Back{{/hasIncentives}}
+			    </dt>
+			    <dd class="vehicle-price-base-price">
+				    ${{#formatNumber}}{{XPlanPrice}}{{/formatNumber}}
+			    </dd>
+            </dl>
+	       
+        </section>
+	{{/ShowXPlan}}
+</script>
+
+<script type="text/x-mustache-template" id="incentive-price-template-tooltip">
+	<table class="incentive-pricing-popup">
+	    <tbody>
+		    <tr class="vehicle-base-price">
+		        <td class="price-description price-label">{{wasPriceDescription}}</td>
+		        <td class="price-description-value">${{wasPrice}}{{{wasPriceDisclaimer}}}</td>
+		    </tr>
+		    {{#hasWasPrice}}
+		        <tr class="calculated-difference"><td class="price-description">{{calcDiffDescription}}</td><td class="price-description-value">-${{calcDiff}}*</td></tr>
+		    {{/hasWasPrice}}
+		    {{#incentives}}
+		    <tr>
+                <td class="price-description">{{Details.Name}}</td><td class="price-description-value">-${{amount}}*</td>
+		    </tr>
+		    {{/incentives}}
+		    <tr class="last">
+                <td class="price-description">{{isPriceDescription}}</td>
+                <td class="price-description-value">${{isPrice}}{{{isPriceDisclaimer}}}</td>
+            </tr>
+        </tbody>
+	</table>
+</script>
+
+<script type="text/x-mustache-template" id="inline-incentive-pricing-headline-template">
+	<dl class="inline-incentive-pricing-headline">
+		<dt class="vehicle-price-discounted-label display">{{isPriceDescription}}</dt>
+		<dd class="vehicle-price-discounted-price display">${{isPrice}}</dd>
+		<dt class="vehicle-price-base-label">{{wasPriceDescription}}</dt>
+		<dd class="vehicle-price-base-price">${{wasPrice}}{{{wasPriceDisclaimer}}}</dd>
+	</dl>
+	<p class="after-discounts-link-container">
+		After Discounts (<a href="#" class="show-incentives-pricing-detail" data-reveal-id="vehicle-pricing-modal">Details</a>)
+	</p>
+</script>
+
+<script type="text/x-mustache-template" id="inline-incentive-pricing-employee-template">
+	<tbody>
+		<tr class="MiscPrice1">
+			<td class="price-description incentive-details">{{wasPriceDescription}}{{{wasPriceDisclaimer}}}</td>
+			<td class="price-description-value incentive-details">${{isPrice}}{{{isPriceDisclaimer}}}</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<span class="after-discounts-link-container">After Discounts (<a href="#pricedescription" class="after-discounts" data-reveal-id="vehicle-pricing-modal">Details</a>)</span>
+			</td>
+		</tr>
+		<tr class="MiscPrice2">
+			<td class="price-description incentive-details">{{wasPriceDescription2}}</td>
+			<td class="price-description-value incentive-details">{{wasPrice2}}</td>
+		</tr>
+	</tbody>
+</script>
+
+<script type="text/x-mustache-template" id="incentive-price-template">
+	<dt class="vehicle-price-discounted-label display">
+		{{isPriceDescription}}
+	</dt>
+	<dd class="vehicle-price-discounted-price display">
+		${{#formatNumber}}{{isPrice}}{{/formatNumber}}{{{isPriceDisclaimer}}}
+	</dd>
+	<dt class="vehicle-price-base-label">
+		{{wasPriceDescription}}
+	</dt>
+	<dd class="vehicle-price-base-price">
+		${{#formatNumber}}{{wasPrice}}{{/formatNumber}}{{{wasPriceDisclaimer}}}
+	</dd>
+	{{#hasWasPrice}}
+		<dt class="vehicle-price-base-label price-discounted">
+			{{calcDiffDescription}}
+		</dt>
+		<dd class="vehicle-price-base-price price-discounted">
+			-${{#formatNumber}}{{calcDiff}}{{/formatNumber}}*
+		</dd>
+	{{/hasWasPrice}}
+	{{#incentives}}      
+           <dt class="vehicle-price-base-label price-discounted" title="{{{Details.Name}}}">
+                {{Details.Name}}	
+		   </dt>
+           <dd class="vehicle-price-base-price price-discounted">
+			    -${{#formatNumber}}{{amount}}{{/formatNumber}}*
+		   </dd>
+	{{/incentives}}
+</script>
+
+<script type="text/x-mustache-template" id="incentive-price-popup-template">
+	<dl class="incentive-pricing-popup {{{vin}}}">
+	    <dt class="vehicle-price-base-label">
+		    {{wasPriceDescription}}
+	    </dt>
+	    <dd class="vehicle-price-base-price">
+		    ${{#formatNumber}}{{wasPrice}}{{/formatNumber}}{{{wasPriceDisclaimer}}}
+	    </dd>
+	    {{#hasWasPrice}}
+		    <dt class="vehicle-price-base-label">
+			    {{calcDiffDescription}}
+		    </dt>
+		    <dd class="vehicle-price-base-price">
+			    -${{#formatNumber}}{{calcDiff}}{{/formatNumber}}*
+		    </dd>
+	    {{/hasWasPrice}}
+	    {{#incentives}}
+		      <dt class="vehicle-price-base-label" title="{{{Details.Name}}}">
+                    {{Details.Name}} 	
+		      </dt>
+              <dd class="vehicle-price-base-price">
+			        -${{#formatNumber}}{{amount}}{{/formatNumber}}*
+		      </dd>  
+	    {{/incentives}}
+	    <dt class="vehicle-price-discounted-label display">
+		    {{isPriceDescription}}
+	    </dt>
+	    <dd class="vehicle-price-discounted-price display">
+		    ${{#formatNumber}}{{isPrice}}{{/formatNumber}}{{{isPriceDisclaimer}}}
+	    </dd>
+	</dl>
+</script>
+
+
+<script type="text/javascript">
+    requirejs.config({
+        baseUrl: 'http://assets.clickmotive.com/static/15.0802.0.525/_CompiledJS/mvc/apps/lincolnunity'
+    });
+        
+        require(['main-master'], function(master) {
+           require(['main-vehicle'], function (page) { var m = master(); page(); m.signalReady(); });
+        }); 
+</script>
+	<script type="text/x-mustache-template" id="video-player-template">
+		<iframe src="{{iframesrc}}" style="width: {{width}}px;height: {{height}}px;"></iframe>	
+	</script>
+    <script type="text/javascript">
+        window.DptFilter = 2;
+    </script>
+
+<script type="text/javascript">
+    window.FordOmnitureConfig = {
+        account: 'fmcdealerconnection,fmcglobal' ,
+        omnitureLibraryUrl: '/Scripts/omniture/FordDirect/FordDirect_Omniture.js',
+        make: 'lincoln',
+        webPageName: 'vehicle',
+        fordDirectPACode: '10473',
+        fordDirectRegionCode: '',
+        isResponsive: true,
+        isMobile: false
+    };
+</script>	                <!-- Google Code for C2621963_wittlm_National Conversion Page --> <div id="homepageremovescript"><script type="text/javascript"> var google_conversion_id = 950641392; var google_conversion_language = "en"; var google_conversion_format = "3"; var google_conversion_color = "ffffff"; var google_conversion_label = "1KA7COC5kQQQ8MWmxQM"; var google_conversion_value = 0; </script> <script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js"> </script> <noscript> <div style="display:inline;"> <img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/950641392/?value=0&label=1KA7COC5kQQQ8MWmxQM&guid=ON&script=0<http://www.googleadservices.com/pagead/conversion/950641392/?value=0&label=1KA7COC5kQQQ8MWmxQM&guid=ON&script=0>"/> </div> </noscript> 
+<script type="text/javascript"> adroll_adv_id = "G3XOCCDDDZFYVG2LL52V3V"; adroll_pix_id = "XA5H6A7RL5EMPERZXZP3OI"; (function () { var oldonload = window.onload; window.onload = function(){ __adroll_loaded=true; var scr = document.createElement("script"); var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com"); scr.setAttribute('async', 'true'); scr.type = "text/javascript"; scr.src = host + "/j/roundtrip.js"; ((document.getElementsByTagName('head') || [null])[0] || document.getElementsByTagName('script')[0].parentNode).appendChild(scr); if(oldonload){oldonload()}}; }()); </script> 
+<img src="http://ad.reachlocal.com/pixel?id=1848811&id=1848814&t=2" width="1" height="1" /> </div>              <!--Evidon tag cid: 2111: pid:2512 10473 Lincoln - Witt Lincoln - CA - Elite--><a id='_bapw-link' href='#' target='_blank' style='text-decoration:none !important'><img src='http://c.betrad.com/pub/icon_ford.png' style='border:0 !important;display:inline !important;vertical-align:middle !important;padding-right:5px !important;'/><span style='vertical-align:middle !important'>AdChoices</span></a> <script type='text/javascript'> (function() { var ev = document.createElement('script'); ev.type = 'text/javascript'; ev.async = true; ev.setAttribute('data-ev-tag-pid', 2512); ev.setAttribute('data-ev-tag-ocid', 2111); ev.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'c.betrad.com/pub/tag.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ev, s); })(); </script>
+
+<style>
+#_bapw-link {
+    position:absolute;
+}
+</style>  <script type="text/javascript"> $(document).ready(function () { var buildAndPriceItems = $("#top-items .subpane li a[href*='/BuildAndPrice/']"); if (buildAndPriceItems.length === 1) { buildAndPriceItems.parent().remove(); } });</script>
+
+	<script type="text/javascript">
+var CM_GoogleAnalyticsAccountList = ["UA-30601702-27","UA-50115034-11"];
+var CM_GoogleAnalyticsAsync = {
+	setAccount: '_setAccount',
+	trackPageview: '_trackPageview',
+	Accounts: CM_GoogleAnalyticsAccountList,
+	getIndexPrefix : function(i) {
+		return i > 0 ? String.fromCharCode(97 + parseInt(i, 10)) + "." : "";
+	}
+};
+        
+function trackConversion(pageName, queryString) {
+	for (var i = 0; i < CM_GoogleAnalyticsAsync.Accounts.length; i++) {
+		_gaq.push([CM_GoogleAnalyticsAsync.getIndexPrefix(i) + CM_GoogleAnalyticsAsync.trackPageview, pageName+queryString]);
+	}
+}
+		
+function getGoogleAnalyticsCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(name) == 0) {
+		    return c.substring(name.length, c.length);
+		}
+	}
+}
+
+var _gaq = _gaq || [];
+var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+var timeoutLength = 0;
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+
+if (window.googleAnalyticsCustomVariableFunctions) {
+	for (var j = 0; j < window.googleAnalyticsCustomVariableFunctions.length; j++) {
+		window.googleAnalyticsCustomVariableFunctions[j]();
+	}
+}
+
+if ((window.useAutoNationGoogleAnalyticsCustomVarsOnPageLoad && (getGoogleAnalyticsCookie('__utma') === undefined || getGoogleAnalyticsCookie('__utma').length < 1)) ||
+	(window.useAutoNationGoogleAnalyticsCustomVarsOnPageLoad && (getGoogleAnalyticsCookie('__utmb') === undefined || getGoogleAnalyticsCookie('__utmb').length < 1))) {
+	timeoutLength = 500;
+}
+
+setTimeout(function () {
+	// Yes, this setTimeout is bad. But there is no way to hook into an event after google analytics creates the cookies. Sorry.
+	for (var index = 0; index < CM_GoogleAnalyticsAsync.Accounts.length; index++) {
+		
+		_gaq.push([CM_GoogleAnalyticsAsync.getIndexPrefix(index) + CM_GoogleAnalyticsAsync.setAccount, CM_GoogleAnalyticsAsync.Accounts[index]]);
+
+		if (!window.CM_GoogleAnalyticsAutoNationIpAddress) {
+		    window.CM_GoogleAnalyticsAutoNationIpAddress = "";
+		}
+
+		if (index !== 0 && window.useAutoNationGoogleAnalyticsCustomVarsOnPageLoad) {
+		    _gaq.push([CM_GoogleAnalyticsAsync.getIndexPrefix(index) + '_setCustomVar', 13, 'Client Id', getGoogleAnalyticsCookie('__utma')],
+		        [CM_GoogleAnalyticsAsync.getIndexPrefix(index) + '_setCustomVar', 14, 'Session Id', getGoogleAnalyticsCookie('__utmb')],
+		        [CM_GoogleAnalyticsAsync.getIndexPrefix(index) + '_setCustomVar', 15, 'IP Address', window.CM_GoogleAnalyticsAutoNationIpAddress]);
+		}
+
+		if (index !== 0 && window.useAutoNationGoogleAnalyticsCustomVarsOnConfirmation) {
+		    _gaq.push([CM_GoogleAnalyticsAsync.getIndexPrefix(index) + '_setCustomVar', 20, 'Lead Id', $.url.param('cid')],
+		        [CM_GoogleAnalyticsAsync.getIndexPrefix(index) + '_setCustomVar', 21, 'Dealership Name', window.CM_GoogleAnalyticsAutoNationDealerName]);
+		}
+
+		_gaq.push([CM_GoogleAnalyticsAsync.getIndexPrefix(index) + CM_GoogleAnalyticsAsync.trackPageview]);
+	}
+}, timeoutLength);
+		
+(function () {
+
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+})();
+</script>
+
+	<script type="text/javascript">
+if(typeof Site.ProcessDelayedScripts != 'undefined') {
+Site.ProcessDelayedScripts();
+}
+</script>
+
+	
+	
+	<script type="text/javascript">
+var _paCode = '10473-L';
+var opts = { paCode: _paCode }; 
+if (typeof connectFDAdvertisingData !== 'undefined') { connectFDAdvertisingData( opts);  } 
+</script>
+
+	<script type="text/javascript" src="//dtstat.skysa.com?i=6F8335DE-646B-4D99-9B7A-290F9920B7B8&sec=dtsec.skysa.com&pip=dtpip.skysa.com" async="true"></script>
+
+	<script>
+		function appendScript(pathToScript){						
+		var head = document.getElementsByTagName("head")[0];
+    	var js = document.createElement("script");
+    	js.type = "text/javascript";
+    	js.src = pathToScript;
+    	head.appendChild(js);
+    	}
+	</script>
+
+	<script>
+    		appendScript("https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/FWDViewer.js");
+    		window.onload = function(){
+    			appendScript("https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/Setup2.js");
+    			appendScript("https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/java/pgwslideshow.min.js");
+    		}
+    		appendScript("https://www.google.com/jsapi");
+    		appendScript("https://code.jquery.com/jquery-1.8.3.min.js");
+    		appendScript("https://code.jquery.com/ui/1.11.4/jquery-ui.js");
+    		$(".vdp_top.vdp_section").load("https://s3-us-west-2.amazonaws.com/sparkilabs.demo/demoGalpin/API3.html");
+	</script>
+</body>
+</html>
+
+
+
+
+

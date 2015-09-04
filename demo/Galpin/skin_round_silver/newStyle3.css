@@ -1,0 +1,143 @@
+#wrapper{
+  	position: relative;
+  	display: inline-block;
+	overflow: hidden;
+  	left: 0px;
+  	top: 0px;
+  	margin: 0px;
+  	padding: 0px;
+  	max-width: none;
+  	max-height: none;
+  	border: none;
+  	line-height: 1;
+  	backface-visibility: visible;
+  	-webkit-backface-visibility: visible;
+  	-webkit-tap-highlight-color: rgbs(0,0,0,0);
+  	-webkit-user-select: none;
+  	transform: translate(0px,0px);
+  	width: 700px; height: 550px;
+  	background-color: #cccccc;
+}
+
+.slides {
+  width: 630px;
+  margin-left: 0px;
+  margin: 0 auto;
+  height:400px;
+  background-color: transparent; 
+
+}
+
+
+.slides ul {
+  list-style: inside none disc;
+  margin: 0px;
+  padding: 0;
+}
+
+.logo{
+  position:absolute;
+  left:560px;
+  top:40px;
+}
+
+.banner{
+  position:absolute; left:620px; top: 100px;
+  cursor:pointer;
+}
+
+.banner1{
+  position:absolute; left:620px; top: 140px;
+  cursor:pointer;
+}
+
+#imageContainer{
+	width: 700px;
+}
+
+
+
+#tabs{
+	padding: 0px;
+	width:100%;
+	margin-left: 30px;
+	margin-top: 0px;
+	background-color:#000000;
+}
+#tabs ul{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	font-size:15px;
+	font-family: Roboto;
+
+}
+
+#tabs li{
+	display:block;
+	float:left;
+	text-align:center;
+	border:1px solid #999;
+	margin:0px;
+	margin-left:0px;
+	padding: 7px;
+	width:20%;
+	cursor:pointer;
+	background:#000000;
+	color:#446161;
+	//border-top-left-radius:8px;
+	//border-top-right-radius:8px;
+}
+#tabs li.active{
+	color: #cccccc;
+	background: #333333;
+	border-bottom:1px solid #333333;
+}
+#thumbs-container {
+	margin-top: 440px;
+	margin-left: 10px;
+}
+.slick-track {
+	opacity: 0.8 !important;
+}
+.inner-thumbs {
+	background: blue;
+	margin: 10px;
+	height: 60px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+.inner-thumbs:hover {
+	opacity: 1;
+}
+button.slick-prev {
+	/*background: url("http://www.carmax.com/img/carpage/carpage-map-zoom.png") -430px 6px no-repeat;*/
+	position: absolute;
+	top: 5px;
+	left: -8px;
+	height: 70px;
+	width: 15px;
+	border: none;
+	cursor: pointer;
+	background: rgba(0,0,0,0.2);
+}
+button:focus {
+	outline: 0;
+}
+button.slick-prev:hover {
+	background-position: -430px -94px;
+}
+button.slick-next {
+	/*background: url('http://www.carmax.com/img/carpage/carpage-map-zoom.png') -651px 6px no-repeat;*/
+	position: absolute;
+	top: 5px;
+	right: -8px;
+	height: 70px;
+	width: 25px;
+	border: none;
+	cursor: pointer;
+	background: rgba(0,0,0,0.2);
+}
+button.slick-next:hover {
+	background-position: -651px -94px;
+}		
